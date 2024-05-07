@@ -7,7 +7,7 @@ transaction {
     // Define a reference to the contract
     prepare(signer: AuthAccount) {
         // Specify the address of the deployed contract
-        let contractAddress = 0x05 // Replace with the actual contract address
+        let contractAddress = 0x05 
         
         // Get a reference to the contract
         let contractRef =
