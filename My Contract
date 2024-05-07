@@ -1,0 +1,32 @@
+// MyContract.cdc
+
+pub contract MyContract {
+
+    // Define a struct
+    pub struct MyStruct {
+        pub var id: UInt64
+        pub var data: String
+
+        // Initialize the struct fields in the constructor
+        init(id: UInt64, data: String) {
+            self.id = id
+            self.data = data
+        }
+    }
+    
+    // Define a dictionary to store instances of MyStruct
+    pub var myStructs: {UInt64: MyStruct}
+
+    // Initialize the dictionary
+    init() {
+        self.myStructs = {}
+    }
+
+    // Function to add a new instance of MyStruct
+    pub fun addMyStruct(id: UInt64, data: String) {
+        // Create a new instance of MyStruct
+        let newStruct = MyStruct(id: id, data: data)
+        // Add the new instance to the dictionary
+        self.myStructs[id] = newStruct
+    }
+}
